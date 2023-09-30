@@ -11,7 +11,6 @@ This repository contains SQL queries and data analysis activities for the Indian
 - [Data Exploration](#data-exploration)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Introduction
 
