@@ -1,0 +1,52 @@
+Basic Dataset Information:
+
+--What are the total number of records in the dataset?
+
+select count(*) from IndianHouses;
+
+Descriptive Statistics:
+
+--What is the average price of houses in the dataset?
+
+select *, avg(price) from IndianHouses;
+
+--What is the highest and lowest price of houses?
+
+select max(price), min(price) from IndianHouses;
+
+--What is the average area (square footage) of the houses?
+
+select avg(per_sqft) from IndianHouses;
+
+Filtering and Selection:
+
+--Show me all the houses that have more than 3 bedrooms.
+
+select * from IndianHouses
+where bhk>3;
+
+Grouping and Aggregation:
+
+--Group houses by city and calculate the average price for each city.
+
+select *, avg(price) as average_price from IndianHouses
+GROUP BY locality;
+
+--Find the city with the highest average price.
+
+select *, avg(price) as average from IndianHouses
+GROUP BY locality
+order by average DESC
+limit 1;
+
+Data Exploration:
+
+--How many houses have parking?
+
+select count(*) as total_houses from IndianHouses
+where parking is not NULL;
+
+--What is the most common type of house in the dataset 
+
+select type, COUNT(*) as total_houses from IndianHouses
+GROUP BY type;
